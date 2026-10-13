@@ -11,10 +11,9 @@ Summary: Provides infrastructure for theming Flask applications
 
 Development: https://github.com/sysr-q/flask-themes2
 
-Documentation: https://flask-themes2.readthedocs.io
+Documentation: https://flask-themes2.readthedocs.io/
 
 Flask-Themes2 is a fork of Spirits, which is in turn a fork of Flask-Themes.
-
 
 Current build status
 ====================
