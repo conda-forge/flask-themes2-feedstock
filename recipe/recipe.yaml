@@ -32,7 +32,9 @@ tests:
       imports:
         - flask_themes2
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version: 
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   homepage: https://github.com/sysr-q/flask-themes2
