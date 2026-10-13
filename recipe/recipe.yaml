@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: flask-themes2
+  version: "2.0.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 86f8c2c6aaba7330f507ba6d2e2d04ea800b3a5ce52749efa2b3c0ea78459af5
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+    - flit-core >=3.11,<5
+  run:
+    - flask >=2.0
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - flask_themes2
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  homepage: https://github.com/sysr-q/flask-themes2
+  summary: Provides infrastructure for theming Flask applications
+  description: |
+    Flask-Themes2 is a fork of Spirits, which is in turn a fork of Flask-Themes.
+  license: MIT
+  license_file: LICENSE
+  documentation: https://flask-themes2.readthedocs.io
+  repository: https://github.com/sysr-q/flask-themes2
+
+extra:
+  recipe-maintainers:
+    - HeavyTony2
